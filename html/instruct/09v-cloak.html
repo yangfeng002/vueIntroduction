@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>指令--v-cloak指令</title>
+		<style type="text/css">
+			[v-cloak] {
+			  display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- v-cloak 不需要表达式（提升用户体验）
+		    不会显示，直到编译结束
+		 -->
+		
+		<div id="app" v-cloak>
+			<p  v-for="(val,key,index) in message">
+				{{val+"--"+key+"--"+index}}
+			</p>
+		</div>
+		<script type="text/javascript" src="../../lib/vue/vue.js"></script>
+		<script type="text/javascript">
+			var obj = {
+				name:'lucy',
+				sex:'女',
+				age:18
+			}
+			 new Vue({
+				 el:'#app',
+				 data:{
+					message:obj
+				 }
+			 })
+		</script>
+	</body>
+</html>

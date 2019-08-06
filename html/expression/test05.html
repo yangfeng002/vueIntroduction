@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表达式---05数组操作</title>
+</head>
+<body>
+<div id="app">
+    <!--数组操作：就像操作javascript数组一样-->
+     <p>{{'姓名--：'+message[0]+'--特征：'+message[1]+'--时间段：'+message[2]}}</p>
+</div>
+<script type="text/javascript" src="../../lib/vue/vue.js"></script>
+<script type="text/javascript">
+    var arr = ["张三丰",'每天练功','早中晚'];
+    new Vue({
+        el:'#app',
+        data:{
+           message:arr
+        }
+    })
+
+</script>
+</body>
+</html>

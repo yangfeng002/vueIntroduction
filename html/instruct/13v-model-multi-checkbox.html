@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>指令--v-model 多个checkbox示例</title>
+	</head>
+	<body>
+		<div id="app">
+			  <input type="checkbox" id="jack" value="Jack" v-model="checkedNames">
+			  <label for="jack">Jack</label>
+			  <input type="checkbox" id="john" value="John" v-model="checkedNames">
+			  <label for="john">John</label>
+			  <input type="checkbox" id="mike" value="Mike" v-model="checkedNames">
+			  <label for="mike">Mike</label>
+			  <br>
+			  <span>Checked names: {{ checkedNames }}</span>
+		</div>
+		<script type="text/javascript" src="../../lib/vue/vue.js"></script>
+		<script type="text/javascript">
+			new Vue({
+				  el: '#app',
+				  data: {
+					checkedNames: []
+				  }
+				})
+		</script>
+		<!-- v-model
+		     多个复选框，值绑定到一个数组中
+		 -->
+	</body>
+</html>

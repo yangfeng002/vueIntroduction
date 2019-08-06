@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>指令--11 v-bind指令</title>
+		<link rel="stylesheet" type="text/css" href="../../sass/common.css"/>
+	</head>
+	<body>
+		<!-- v-bind指令:用于绑定元素的属性，属性也可以是自定的
+		  
+		     简写模式： "：属性"
+			 
+			 class绑定------
+			   :class="{red:isRed}" 
+			   red是class样式，
+			   isRed是布尔值
+			   
+			style绑定-----
+			  
+			
+			img路径绑定
+			  :src="imgUrl"
+				 
+		 -->
+		<div id="app">
+			<!-- 绑定class -->
+			<p :class="{p1:show}">我是蓝色字体，红色背景</p>
+			<p class="{p2:hide}">我是一个红色字体</p>
+			
+			<!--绑定style,多个样式用逗号隔开 -->
+		    <p class="{p2:hide}" :style="{color:red,fontSize:20+'px'}">一个红色字体</p>
+			<!-- img路径绑定 -->
+			<img :src="imgUrl" />
+			
+			
+		</div>
+		<script type="text/javascript" src="../../lib/vue/vue.js"></script>
+		<script type="text/javascript">
+			  new Vue({
+				  el:'#app',
+				  data:{
+					  show:true,
+					  hide:false,
+					  imgUrl:'../../images/logo.jpg',
+					  red:'red'
+				  },
+				  methods:{
+					  
+				  },
+				  
+			  })
+		</script>
+		
+	</body>
+</html>

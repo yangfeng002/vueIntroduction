@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>指令---03 v-once指令</title>
+</head>
+<body>
+<!--v-once只渲染一次，即使数据有更新也不会再次渲染  语法：没有表达式 <p v-once></p>-->
+<div id="app">
+    <!--此处的值不会改变-->
+    <p v-once>{{message}}</p>
+    <p><input type="text" v-model="message"/></p>
+    <!--此处的值随着输入的值而改变-->
+    <p>message的值为:{{message}}</p>
+
+    <!--用途：网站中--关于我们、详细页、电话、地址、单页推广等等
+        主要用于：不经常改变的页面
+    -->
+</div>
+<script type="text/javascript" src="../../lib/vue/vue.js"></script>
+<script type="text/javascript">
+
+    var vue = new Vue({
+        el:'#app',
+        data:{
+            message:'测试v-once指令'
+        }
+    })
+
+</script>
+</body>
+</html>

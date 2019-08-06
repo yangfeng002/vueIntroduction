@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>07--v-for指令之对象</title>
+	</head>
+	<body>
+		<!-- v-for遍历对象
+		 语法：
+		    语法1：不需要索引
+		 	<div v-for="(val, key) in object"></div>
+			
+			语法2：需要索引
+			<div v-for="(val, key,index) in object"></div>
+			   val 单个项目的值
+			   key 键
+			   index 索引
+			语法3：
+			   v-for="val in message"
+			   
+			-->
+		<div id="app">
+			<!-- 示例1 -->
+			<p v-for="(val,key,index) in message">
+				{{val+"--"+key+"--"+index}}
+			</p>
+			
+			<!-- 示例2 -->
+			<p v-for="(val,key) in message">
+				{{val+"==="+key}}
+			</p>
+			<!-- 示例3 -->
+			<p v-for="val in message">
+				{{val}}
+			</p>
+			
+		</div>
+		<script type="text/javascript" src="../../lib/vue/vue.js"></script>
+		<script type="text/javascript">
+			var obj = {
+				name:'lucy',
+				sex:'女',
+				age:18
+			}
+			 new Vue({
+				 el:'#app',
+				 data:{
+					message:obj
+				 }
+			 })
+		</script>
+	</body>
+</html>

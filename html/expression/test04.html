@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表达式---04对象操作</title>
+</head>
+<body>
+<div id="app">
+    <!--对象操作，和javascript操作对象一样-->
+    <p>{{"姓名："+message.name}}</p>
+    <p>{{"年龄："+message["age"]}}</p>
+</div>
+<script type="text/javascript" src="../../lib/vue/vue.js"></script>
+<script type="text/javascript">
+    var person = {
+        name:'张三',
+        sex:'男',
+        age:28
+    }
+   new Vue({
+       el:'#app',
+       data:{
+           message:person
+       }
+   })
+
+</script>
+</body>
+</html>
