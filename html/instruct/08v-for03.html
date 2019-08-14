@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>指令---08 v-for和v-if综合使用</title>
+</head>
+<body>
+
+<div id="app">
+	<!-- 数组演示 -->
+     <p v-if="index>1" v-for="(item,index) in message">
+		 {{'名字：'+item+'--索引值：'+index}}
+	 </p>
+</div>
+
+
+<script type="text/javascript" src="../../lib/vue/vue.js"></script>
+<script type="text/javascript">
+	var arr = ['张三','李四','王五','赵六'];
+    new Vue({
+		el:'#app',
+		data:{
+		   message:arr,
+		   obj:[{
+			   username:'jack',
+			   age:20
+		   },
+		   {
+			  username:'lucy',
+			 age:25 
+		   },
+		   ]
+		}
+	})
+
+</script>
+</body>
+</html>

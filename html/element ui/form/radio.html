@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../../../sass/common.css"/>
+		<link rel="stylesheet" type="text/css" href="../../../lib/vue/element/index.css"/>
+		<link rel="stylesheet" type="text/css" href="../../../lib/vue/element/font.css"/>
+	</head>
+	<body>
+		<div id="app" v-cloak>
+			<!-- 
+			 border：true/false是否现在边框
+			 label:相当于value值
+			 v-model动态绑定值
+			 disabled:禁用
+			 size：尺码大小：medium/small/mini
+			 -->
+			<template>
+			  <el-radio v-model="radio" border label="1">备选项</el-radio>
+			  <el-radio v-model="radio" label="2">备选项</el-radio>
+			</template>
+			<template>
+			  <el-radio v-model="radio" disabled label="1">禁用</el-radio>
+			  <el-radio v-model="radio" disabled label="2">禁用2</el-radio>
+			</template>
+			<template>
+				<el-radio  v-model="radiotest"  label="1" border>单选按钮1</el-radio>
+				<el-radio  v-model="radiotest"  label="2" border>单选按钮2</el-radio>
+			</template>
+			
+			<!-- 单选框组 -->
+			<template>
+			  <div>
+			    <el-radio-group v-model="radio1" @change="change()">
+			      <el-radio-button label="上海"></el-radio-button>
+			      <el-radio-button label="北京"></el-radio-button>
+			      <el-radio-button label="广州"></el-radio-button>
+			      <el-radio-button label="深圳"></el-radio-button>
+			    </el-radio-group>
+			  </div>
+			</template>
+		</div>
+		<script type="text/javascript" src="../../../lib/vue/vue.js"></script>
+		<script src="../../../lib/vue/element/index.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			new Vue({
+				el:"#app",
+				data:function(){
+					return {
+						 radio: '1',
+						 radiotest:"2",
+						 radio1:"北京"
+					}
+				},
+				methods:{
+					change:function(){
+                        alert(this.radio1);
+					}
+				}
+			})
+		</script>
+			
+	</body>
+</html>

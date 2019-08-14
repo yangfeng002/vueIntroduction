@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>vue--综合示例</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="../../less/common.css"/>
+	</head>
+	<body>
+	<div id="app" v-cloak class="container">
+		<fieldset id="">
+			<legend>户籍管理系统（Vue2.0）</legend>
+			<form method="post" class="form-horizontal">
+				<div class="form-group">
+					<label for="username" class="col-sm-2 control-label">用户名：</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" name="username" v-model="newPerson.name" />
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="age" class="col-sm-2 control-label">年龄：</label>
+					<div class="col-sm-10">
+					  <input type="number" name="age"   v-model="newPerson.age"  class="form-control" maxlength="3"  min="0"/>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="sex" class="col-sm-2 control-label">性别：</label>
+					<div class="col-sm-10">
+					  <select v-model="newPerson.sex" >
+						<option value="男">男</option>
+						<option value="女">女</option>
+					  </select>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="tel" class="col-sm-2 control-label">电话：</label>
+					<div class="col-sm-10">
+					 <input type="text" name="tel"  v-model="newPerson.tel" placeholder="请输入手机号码" class="form-control" maxlength="11"  />
+					</div>
+				</div>
+			<div class="form-group">
+			   <div class="col-sm-offset-2 col-sm-10">
+				<button type="button" class="btn btn-info" @click="addPerson()">创建新用户</button>
+			   </div>
+			</div>	   
+			</form> 
+		</fieldset>
+	<!-- 数据展示 -->
+	<table class="table table-bordered" style="margin: 20px 0;">
+		<thead>
+			<tr>
+				<td>用户名</td>
+				<td>年龄</td>
+				<td>性别</td>
+				<td>手机号码</td>
+				<td>操作</td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr v-for="(item,index) in persons">
+				<td>{{item.name}}</td>
+				<td>{{item.age}}</td>
+				<td>{{item.sex}}</td>
+				<td>{{item.tel}}</td>
+				<td><button class="btn btn-default" @click="removePerson(index)">删除</button></td>
+			</tr>
+		</tbody>
+	</table>
+	</div>
+	<script type="text/javascript" src="../../lib/vue/vue.js"></script>
+	<script type="text/javascript">
+		var vue = new Vue({
+			el:'#app',
+			data:{
+				persons:[
+					{"name":"张三",age:20,sex:'男',tel:'13812345248'},
+					{"name":"李四",age:30,sex:'男',tel:'13812325208'},
+					{"name":"王五",age:26,sex:'男',tel:'13812435235'}
+				],
+				newPerson:{name:'',age:'0',sex:'男',tel:''}
+			},
+			methods:{
+				addPerson(){
+					//添加的时候需要表单验证
+					if(!this.newPerson.name){
+					   alert("用户名不能为空");
+					   return false;
+					}else{
+						return this.persons.unshift(this.newPerson);
+					}
+				},
+				removePerson(index){
+					return this.persons.splice(index,1);
+				}
+			}
+		})
+	</script>
+		
+</body>
+</html>

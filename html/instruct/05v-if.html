@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>指令---05 v-if指令</title>
+</head>
+<body>
+<!-- v-if可以完全根据表达式的值在DOM中“生成”和“移除”一个元素
+    用途：适合后台管理系统，安全性较高
+-->
+
+<div id="app">
+  <p v-if="show1">看见我</p>
+  <p v-if="hide1">看不见我</p>
+</div>
+<script type="text/javascript" src="../../lib/vue/vue.js"></script>
+<script type="text/javascript">
+
+    var vue = new Vue({
+        el:'#app',
+        data:{
+            show1:true,
+            hide1:false
+        }
+    })
+
+</script>
+</body>
+</html>

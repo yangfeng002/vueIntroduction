@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>指令---01 v-model基础语法</title>
+	<link rel="stylesheet" type="text/css" href="../../less/common.css"/>
+</head>
+<body>
+<!--v-model主要是用于表单中,text/textarea/select/radio/checkbox
+    当前页面演示text/textarea
+
+-->
+    <div id="app" v-cloak>
+		<!-- input数据绑定 -->
+        <p>在输入框中尝试输入：</p>
+        <p>
+            <input type="text" v-model="username"/>
+        </p>
+        <p>
+           你输入的内容为：{{username}}
+        </p>
+        
+		<!-- textarea绑定 -->
+		<textarea rows="3" cols="10" v-model="message"></textarea>
+		<p>文本域的内容为：{{message}}</p>
+    </div>
+
+    <script type="text/javascript" src="../../lib/vue/vue.js"></script>
+    <script type="text/javascript">
+
+      var vue = new Vue({
+          el:'#app',
+          data:{
+            username:'',
+			message:'文本内容'
+          }
+      })
+
+    </script>
+</body>
+</html>

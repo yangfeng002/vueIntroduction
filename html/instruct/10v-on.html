@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>指令--10v-on指令</title>
+	</head>
+	<body>
+		<!-- v-on:
+		    绑定事件
+			  v-on:事件名="执行代码[function | 原生]"
+		      v-on简写方式： @事件名="方法名"
+		 -->
+		
+		<div id="app">
+			<button v-on:click="rev">点我你就赚到了</button>
+		    <input type="text" v-on:keyup="enter"/>
+			<button @click="rev1">点我</button>
+		</div>
+		<script type="text/javascript" src="../../lib/vue/vue.js"></script>
+		<script>
+			new Vue({
+				el:'#app',
+				data:{
+				  //数据模型 	
+				},
+				methods:{
+					//方法存在在methods属性里面
+					rev(){
+						//此处的方法为function的简写
+						alert("测试");
+					},
+					enter:function(){
+						//这是function的原生写法
+						alert("点了");
+					},
+					rev1:function(){
+						alert(222);
+					}
+				}
+		
+			})
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>组件传参--props02(动态传参)</title>
+		<link rel="stylesheet" type="text/css" href="../../sass/common.css"/>
+	</head>
+	<body>
+		<div id="app" v-cloak>
+			<input type="text" v-model="Message"/>
+			<hello :message="Message"></hello>
+		</div>
+		<script type="text/javascript" src="../../lib/vue/vue.js"></script>
+		<script type="text/javascript">
+			var parent = {
+				template:"<div>{{message}}</div>",
+				props:["message"]
+			}
+			Vue.component('hello',parent);
+			new Vue({
+				el:'#app',
+				//传参相当于生成一个data
+				data:{
+					Message:''
+				}
+			})
+		</script>
+			
+	</body>
+</html>

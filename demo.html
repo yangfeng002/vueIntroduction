@@ -6,16 +6,23 @@
     <script src="lib/vue/vue.js" type="text/javascript"></script>
 </head>
 <body>
+  <!--简单使用示例-->
     <!--方式一-->
    <!-- <div id="app">
        {{message}}
     </div>-->
 
-
    <!--方式二-->
-   <div id="app" v-text="message">
+  <!-- <div id="app" v-text="message">
 
-   </div>
+   </div>-->
+
+  <!--v-model在表单上面使用，v-bind属性绑定 v-text和{{}}} 花括号功能一致-->
+ <div id="app">
+     <h3>{{message}}</h3>
+     <input type="text" v-model="message">
+ </div>
+
 
 <script type="text/javascript">
     //el--element元素绑定,data为数据模型key-value

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>指令---02 v-text和v-html</title>
+</head>
+<body>
+<div id="app">
+    <!--v-text指令和{{}}的效果是一样的-->
+    <p v-text="username"></p>
+    <!--v-html可以识别model中的html标签-->
+    <p v-html="username"></p>
+    <!--表达式{{}}-->
+    <p>{{username}}</p>
+</div>
+<script type="text/javascript" src="../../lib/vue/vue.js"></script>
+<script type="text/javascript">
+
+    var vue = new Vue({
+        el:'#app',
+        data:{
+            username:'<br>今天有雨</br>'
+        }
+    })
+
+</script>
+</body>
+</html>

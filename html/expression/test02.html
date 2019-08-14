@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表达式---02数字操作</title>
+</head>
+<body>
+<div id="app">
+    <!--数字操作-->
+    <p>{{num1*num2}}</p>
+    <p>{{num1/num2}}</p>
+    <h3>{{str1+'-love->'+str2}}</h3>
+</div>
+<script type="text/javascript" src="../../lib/vue/vue.js"></script>
+<script type="text/javascript">
+   new Vue({
+       el:'#app',
+       data:{
+           num1:64,
+           num2:23,
+           str1:'jack',
+           str2:'rose'
+       }
+   })
+
+</script>
+</body>
+</html>

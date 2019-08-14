@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>指令---06 v-for指令/v-for和v-if综合使用</title>
+</head>
+<body>
+	<!-- v-for指令主要用于遍历数组和对象
+	<div v-for="item in items">{{ item.text }}</div>
+	<div v-for="(item, index) in items"></div>	  
+	数组：
+	   语法1：需要索引值的
+	        v-for = "(item,index) in message"
+       语法2：不需要索引值
+			  v-for="item in message"
+			 
+	 -->
+<div id="app">
+	<!-- 数组演示 -->
+     <p v-if="index>1" v-for="(item,index) in message">
+		 {{'名字：'+item+'--索引值：'+index}}
+	 </p>
+	 <span v-for="item in message">{{'名字：'+item}}<br></span>
+	 
+</div>
+
+
+<script type="text/javascript" src="../../lib/vue/vue.js"></script>
+<script type="text/javascript">
+	var arr = ['张三','李四','王五','赵六'];
+    new Vue({
+		el:'#app',
+		data:{
+		   message:arr,
+		}
+	})
+
+</script>
+</body>
+</html>

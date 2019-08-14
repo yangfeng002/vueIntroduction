@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>指令---04 v-show指令</title>
+</head>
+<body>
+<!--v-show指令通过布尔值来控制元素的显示和隐藏
+    用途：页面特效显示和隐藏的切换，不适合后台管理系统，安全性欠佳
+-->
+<div id="app">
+  <p v-show="show1">看见我</p>
+  <p v-show="hide1">看不见我</p>
+</div>
+<script type="text/javascript" src="../../lib/vue/vue.js"></script>
+<script type="text/javascript">
+
+    var vue = new Vue({
+        el:'#app',
+        data:{
+            show1:true,
+            hide1:false
+        }
+    })
+
+</script>
+</body>
+</html>

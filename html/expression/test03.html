@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表达式---03字符串操作</title>
+</head>
+<body>
+<div id="app">
+    <!--字符串操作,字符串类型的相关属性都可以使用-->
+    <p>{{str.length}}</p>
+    <p>{{str.substr(2)}}</p>
+    <p>{{str.toLowerCase()}}</p>
+    <p>{{str.toUpperCase()}}</p>
+
+</div>
+<script type="text/javascript" src="../../lib/vue/vue.js"></script>
+<script type="text/javascript">
+   new Vue({
+       el:'#app',
+       data:{
+         str:'abcdef'
+       }
+   })
+
+</script>
+</body>
+</html>

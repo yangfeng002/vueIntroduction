@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>指令---05 v-else指令</title>
+	</head>
+	<body>
+		<!-- v-else 不需要表达式，但是前一兄弟元素必须有 v-if 或 v-else-if -->
+		<div id="app">
+			<p v-if="hide">第一个</p>
+			<p v-else-if="hide">第二个</p>
+			<p v-else>第三个</p>
+		</div>
+		<script type="text/javascript" src="../../lib/vue/vue.js"></script>
+		<script type="text/javascript">
+			new Vue({
+				el:'#app',
+				data:{
+					show:true,
+					hide:false
+				}
+			})
+		</script>
+	</body>
+</html>

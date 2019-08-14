@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表达式---01基础语法</title>
+</head>
+<body>
+     <div id="app">
+         <p>{{message}}</p>
+         <!--支持数字运算 6100-->
+         <h3>{{100+6000}}</h3>
+         <!--支持拼接-->
+         <h3>{{"今天是"+"2019年8月5号"}}</h3>
+         <!--结果为：10010-->
+         <h3>{{100+"10"}}</h3>
+     </div>
+     <script type="text/javascript" src="../../lib/vue/vue.js"></script>
+     <script type="text/javascript">
+        new Vue({
+             el:'#app',
+             data:{
+               message:"基础语法"
+             }
+         })
+     </script>
+</body>
+</html>
