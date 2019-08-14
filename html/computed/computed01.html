@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>vue计算属性---</title>
+		<link rel="stylesheet" type="text/css" href="../../less/common.css"/>
+	</head>
+	<body>
+		<div id="app" v-cloak>
+			<!-- 表达式直接计算 -->
+			<p>表达式:{{3+3}}</p>
+			<!-- 需要带方法括号 -->
+			<p>函数:{{sum()}}</p>
+			<!-- 直接调用方法名称 -->
+			<p>计算属性:{{sum1}}</p>
+		</div>
+		<script type="text/javascript" src="../../lib/vue/vue.js"></script>
+		<script type="text/javascript">
+			new Vue({
+				el:'#app',
+				data:{
+				  num1:3,
+				  num2:3
+				},
+				methods:{
+					sum:function(){
+						return this.num1+this.num2;
+					}
+				},
+				computed:{
+					//计算属性有缓存,不会每次都去计算
+					sum1:function(){
+						return this.num1+this.num2;
+					}
+				}
+				
+			})
+			
+			
+		</script>
+			
+	</body>
+</html>

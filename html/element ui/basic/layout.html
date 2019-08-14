@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>element--basic/layout布局</title>
+		<link rel="stylesheet" type="text/css" href="../../../less/common.css"/>
+		<link rel="stylesheet" type="text/css" href="../../../lib/vue/element/index.css"/>
+		<link rel="stylesheet" type="text/css" href="../../../less/vue/example.css"/>
+	</head>
+	<body>
+		<!-- layout布局：24列的布局
+		     el-row ：行(绑定gutter属性可以使列分隔开) 
+			 el-col：列，
+			         :span="12"  通过绑定span属性（数字）去自由布局
+			         :offset="6" 通过offset属性来偏移
+		     div: grid-content bg-purple 背景和网格布局样式
+		 -->
+		<div id="app" v-cloak>
+			<el-row>
+				<el-col :span="24"><div class="grid-content bg-purple-dark"></div></el-col>
+			</el-row>
+			<el-row>
+			  <el-col :span="12"><div class="grid-content bg-purple"></div></el-col>
+			  <el-col :span="12"><div class="grid-content bg-purple-light"></div></el-col>
+			</el-row>
+			<el-row>
+				<el-col :span="8"><div class="grid-content bg-purple-dark"></div></el-col>
+				<el-col :span="8"><div class="grid-content bg-purple-light"></div></el-col>
+				<el-col :span="8"><div class="grid-content bg-purple-dark"></div></el-col>
+			</el-row>
+			<!-- 列分割 :gutter="20" -->
+			<el-row :gutter="20">
+				<el-col :span="6"><div class="grid-content bg-purple-dark"></div></el-col>
+				<el-col :span="6"><div class="grid-content bg-purple-light"></div></el-col>
+				<el-col :span="6"><div class="grid-content bg-purple-dark"></div></el-col>
+				<el-col :span="6"><div class="grid-content bg-purple-light"></div></el-col>
+			</el-row>
+			
+			<!-- 行属性测试 -->
+			<el-row gutter="10" type="flex" justify="space-between">
+				<el-col :span="6" :offset="0" push="0" ><div class="grid-content bg-purple-dark"></div></el-col>
+				<el-col :span="6" pull="3"><div class="grid-content bg-purple-dark"></div></el-col>
+				<el-col :span="6"><div class="grid-content bg-purple-dark"></div></el-col>
+			</el-row>
+			
+			
+		</div>
+		<script type="text/javascript" src="../../../lib/vue/vue.js"></script>
+		<script type="text/javascript" src="../../../lib/vue/element/index.js"></script>
+		<script type="text/javascript">
+			 new Vue({
+				 el:"#app"
+			 })
+		</script>
+	</body>
+</html>

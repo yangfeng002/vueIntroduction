@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>vue--计算属性2</title>
+	</head>
+	<body>
+		<!-- 需求："我会好好学习" 将文字反过来展示 -->
+		<div id="app">
+			<p>{{message}}</p>
+			<p>表达式：{{message.split('').reverse().join('')}}</p>
+			<p>方法：{{rev()}}</p>
+			<p>计算属性：{{rev1}}</p><!-- 计算属性不能加括号，只能当属性调用 -->
+		</div>
+		<script src="../../lib/vue/vue.js"></script>
+		<script type="text/javascript">
+			new Vue({
+				el:"#app",
+				data:{
+					message:"我会好好学习"
+				},
+				methods:{
+					rev(){
+						return this.message.split("").reverse().join("");
+					}
+				},
+				computed:{
+					rev1(){
+						return this.message.split("").reverse().join("");
+					}
+				}
+				
+			})
+			
+		</script>
+	</body>
+</html>

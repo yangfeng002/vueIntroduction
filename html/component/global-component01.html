@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>组件--全局组件01</title>
+	</head>
+	<body>
+		<!-- 组件的实质：
+		     自定义的标签被配置的内容所替代
+			 注意：自定义的组件必须放在js的首行
+			 语法格式：
+			    Vue.component('tagname/自定义的标签名称',options)  //options是对象
+				template:'组件的配置'
+				
+		 -->
+		<div id="app">
+			<button-counter></button-counter>
+		</div>
+		<script src="../../lib/vue/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			//注册组件
+			Vue.component('button-counter',{
+				data:function(){
+				   	return {
+						count:0
+					}
+				},
+				template:"<button @click='count++'>你总共点击了{{count}}次</button>"
+			});
+			//创建vue实例
+			var vue = new Vue({
+				el:"#app"
+			});
+			
+		</script>
+	</body>
+</html>

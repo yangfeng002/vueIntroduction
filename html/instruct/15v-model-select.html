@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../../less/common.css"/>
+	</head>
+	<body>
+		<div id="app" v-cloak>
+			<select v-model="selected">
+				<option disabled value="">请选择</option>
+				<option value="列表1" >列表1</option>
+				<option value="列表2">列表2</option>
+				<option value="列表3">列表3</option>
+			</select>
+			<p>选中的下拉列表:{{selected}}</p>
+			
+			<!-- 下拉列表多选 -->
+			<select multiple="multiple" v-model="selected1">
+				<option disabled value="">请选择</option>
+				<option value="列表1" >列表1</option>
+				<option value="列表2">列表2</option>
+				<option value="列表3">列表3</option>
+			</select>
+			<p>选中的下拉列表:{{selected1}}</p>
+			
+		</div>
+		<script type="text/javascript" src="../../lib/vue/vue.js"></script>
+		<script type="text/javascript">
+			new Vue({
+				el:'#app',
+				data:{
+				   //数据模型，放置在当前属性中
+				   selected:'',
+				   selected1:[]
+				},
+				methods:{
+					//绑定的方法放置在当前属性中
+				}
+			})
+		</script>
+	</body>
+</html>

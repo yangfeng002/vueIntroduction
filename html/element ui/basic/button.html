@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>element--basic/button按钮</title>
+		<link rel="stylesheet" type="text/css" href="../../../less/common.css"/>
+		<link rel="stylesheet" type="text/css" href="../../../less/vue/example.css"/>
+		<link rel="stylesheet" href="../../../lib/vue/element/font.css"/>
+	</head>
+	<body>
+         <div id="app" v-cloak>
+			 <!-- 测试type属性-->
+			 <hr>
+			 <el-row>
+				 <p>type属性</p>
+				 <el-button type="default">默认按钮</el-button>
+				 <el-button type="primary">主要按钮</el-button>
+				 <el-button type="success">按钮</el-button>
+				 <el-button type="warning">按钮</el-button>
+				 <el-button type="danger">按钮</el-button>
+				 <el-button type="info">按钮</el-button>
+				 <el-button type="text">文本按钮</el-button>
+			 </el-row>
+			 
+			  <!--plain朴素按钮 -->
+			 <hr>
+			 <el-row>
+				 <p>plain属性</p>
+				 <el-button type="primary" plain>朴素按钮</el-button>
+				 <el-button type="info" plain>朴素按钮</el-button>
+				 <el-button type="danger" plain>朴素按钮</el-button>
+				 <el-button type="warning" plain>朴素按钮</el-button>
+				 <el-button type="text" plain>朴素按钮</el-button>
+				 <el-button type="success" plain>朴素按钮</el-button>
+			 </el-row>
+			 
+			 <!-- round圆角-->
+			 <hr>
+			 <el-row>
+				 <p>圆角</p>
+				 <el-col :span="24">
+					 <el-button type="primary" round>按钮</el-button>
+				 </el-col>
+			 </el-row>
+			 
+			
+			 <!-- circle圆形-->
+			  <hr>
+			 <el-row>
+				 <p>圆形</p>
+				 <el-col :span="24">
+					 <el-button type="primary" circle>按钮</el-button>
+				 </el-col>
+			 </el-row>
+			 
+			 <!-- loading-->
+			  <hr>
+			 <el-row>
+				 <p>加载按钮</p>
+				 <el-col :span="24">
+					 <el-button type="primary" loading round>按钮</el-button>
+				 </el-col>
+			 </el-row>
+			 
+			 <!-- icon按钮-->
+			 <hr>
+			 <el-row>
+				 <p>icon按钮</p>
+				 <el-col :span="24">
+					 <el-button type="primary" icon="el-icon-edit"></el-button>
+					 <el-button type="primary">上传<i class="el-icon-upload el-icon--right"></i></el-button>
+				 </el-col>
+			 </el-row>
+			 
+			 <!-- 禁用状态-->
+			 <hr>
+			 <el-row>
+				 <el-button type="primary" disabled>按钮</el-button>
+				 <el-button type="text" disabled>文字按钮</el-button>
+			 </el-row>
+			 
+			 <!-- 尺寸-->
+			 <hr>
+			 <el-row>
+				 <el-button type="primary" size="medium">中等按钮</el-button>
+				 <el-button type="primary" size="small">小按钮</el-button>
+				 <el-button type="primary" size="mini">迷你按钮</el-button>
+			 </el-row>
+			 
+			 <!-- 按钮组-->
+			 <hr>
+			 <el-row>
+				 <el-button-group>
+					  <el-button type="primary" icon="el-icon-arrow-left">上一页</el-button>
+					   <el-button type="primary">下一页<i class="el-icon-arrow-right el-icon--right"></i></el-button>
+				 </el-button-group>
+			 </el-row>
+			 
+			 <!--autofocus -->
+			 <hr>
+			 <el-row>
+				 <el-button type="primary" autofocus="true">聚焦按钮</el-button>
+			 </el-row>
+			 
+			 <!-- native-type  button / submit / reset-->
+			 <hr>
+			 <el-row>
+				 <el-button type="primary" native-type="reset">reset</el-button>
+			 </el-row>
+		 </div>
+		<script src="../../../lib/vue/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../../lib/vue/element/index.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			new Vue({
+				el:"#app"
+			})
+		</script>
+	</body>
+</html>

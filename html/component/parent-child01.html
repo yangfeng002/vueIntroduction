@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>组件--父子组件</title>
+		<link rel="stylesheet" type="text/css" href="../../sass/common.css"/>
+	</head>
+	<body>
+		<div id="app" v-cloak>
+			<parent-component></parent-component>
+		</div>
+		<script type="text/javascript" src="../../lib/vue/vue.js"></script>
+		<script type="text/javascript">
+			  var child = {
+				  template:"<h3>这里是子组件</h3>"
+			  }
+			  var parent = {
+				  /* 模板里面必须要用盒子包起来*/
+				  template:`<div>
+				            <h3>这里是父组件</h3>
+				            <child-component></child-component>
+							</div>
+				  `,
+				  components:{
+					  'child-component':child						  
+				  }
+			  }
+			  Vue.component('parent-component',parent);
+			  new Vue({
+				  el:'#app'
+			  })
+			 
+		</script>
+			
+	</body>
+</html>

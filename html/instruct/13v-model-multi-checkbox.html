@@ -3,24 +3,22 @@
 	<head>
 		<meta charset="utf-8">
 		<title>指令--v-model 多个checkbox示例</title>
+		<link rel="stylesheet" type="text/css" href="../../less/common.css"/>
 	</head>
 	<body>
-		<div id="app">
-			  <input type="checkbox" id="jack" value="Jack" v-model="checkedNames">
-			  <label for="jack">Jack</label>
-			  <input type="checkbox" id="john" value="John" v-model="checkedNames">
-			  <label for="john">John</label>
-			  <input type="checkbox" id="mike" value="Mike" v-model="checkedNames">
-			  <label for="mike">Mike</label>
-			  <br>
-			  <span>Checked names: {{ checkedNames }}</span>
+		<div id="app" v-cloak>
+			<input type="checkbox" value="第一个" v-model="message"/>
+			<input type="checkbox" value="第二个" v-model="message"/>
+			<input type="checkbox" value="第三个" v-model="message"/>
+			<input type="checkbox" value="第四个" v-model="message"/>
+			<p>message内容为：{{message}}</p>
 		</div>
 		<script type="text/javascript" src="../../lib/vue/vue.js"></script>
 		<script type="text/javascript">
 			new Vue({
 				  el: '#app',
 				  data: {
-					checkedNames: []
+					message: []
 				  }
 				})
 		</script>
