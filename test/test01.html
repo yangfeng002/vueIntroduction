@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>vue.js</title>
+    <link rel="stylesheet" type="text/css" href="../less/common.css"/>
+	<style type="text/css">
+		#canvas{
+			width: 400px;
+			height: 200px;
+			border: 1px solid #ccc;
+		}
+	</style>
+</head>
+<body>
+   <div id="vue-app" v-cloak>
+	   <!-- 属性或者方法调用-->
+	   <p>{{message}}</p>
+	   <p>{{greet('morning')}}</p>
+
+	   <!-- 数据绑定  v-bind-->
+	   <a v-bind:href="website">web网站</a>
+	   <input type="text" v-bind:value="job"/>
+
+	   <!-- v-html 渲染html相关标签内容-->
+	   <p v-html="websiteTag"></p>
+
+	   <!-- v-on绑定事件 @   单击和双击事件-->
+	   <h3>Events</h3>
+	   <button type="button" class="btn" @click="add(1)">加一岁</button>
+	   <button type="button" class="btn" @click="substract(1)">减一岁</button>
+	   <button type="button" class="btn" @click="add(10)">加10岁</button>
+	   <button type="button" class="btn" @click="substract(10)">减10岁</button>
+	   <p>当前的年龄为{{age}}</p>
+	   <!-- -->
+	   <div id="canvas" @mousemove="updateXY">
+		   {{x}}  {{y}}
+		   <span @mousemove.stop=""> stop moving</span>
+	   </div>
+   </div>
+   <script src="../lib/vue/vue.js" type="text/javascript" charset="utf-8"></script>
+   <script src="../js/app.js" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>
