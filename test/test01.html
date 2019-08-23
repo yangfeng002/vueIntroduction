@@ -10,6 +10,9 @@
 			height: 200px;
 			border: 1px solid #ccc;
 		}
+		.green{
+			color:#00ff00;
+		}
 	</style>
 </head>
 <body>
@@ -37,6 +40,15 @@
 		   {{x}}  {{y}}
 		   <span @mousemove.stop=""> stop moving</span>
 	   </div>
+
+	   <!--computed计算属性，调用方法时不要加括号 -->
+
+       <!--class与style绑定-->
+	   <div>
+		   <button @click="change()">change color</button>
+		   <span v-bind:class="{green:changeColor}">test</span>
+	   </div>
+
    </div>
    <script src="../lib/vue/vue.js" type="text/javascript" charset="utf-8"></script>
    <script src="../js/app.js" type="text/javascript" charset="utf-8"></script>

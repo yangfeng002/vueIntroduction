@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>测试el/template/render优先级</title>
+		<link rel="stylesheet" type="text/css" href="../../sass/common.css"/>
+	</head>
+	<body>
+		<div id="app" v-cloak>
+			<div class="vapp-1">{{ info }}</div>
+			<div class="vapp-2">{{ info }}</div>
+			<div class="vapp-3">{{ info }}</div>
+		</div>
+		<script type="text/javascript" src="../../lib/vue/vue.js"></script>
+		<script src="../../lib/vue/vue-router/vue-router.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			new Vue({
+			  el: '.vapp-1',
+			  data: {
+			    info: '这是通过el属性获取挂载元素的outerHTML方式渲染。'
+			  },
+			  template: '<div>这是template属性模板渲染。</div>',
+			  render: function(h){
+			    return h('div', {}, '这是render属性方式渲染。')
+			  }
+			})
+			
+			new Vue({
+			  el: '.vapp-2',
+			  data: {
+			    info: '这是通过el属性获取挂载元素的outerHTML方式渲染。'
+			  },
+			  template: '<div>这是template属性模板渲染。</div>'
+			})
+			
+			new Vue({
+			  el: '.vapp-3',
+			  data: {
+			    info: '这是通过el属性获取挂载元素的outerHTML方式渲染。'
+			  }
+			})
+		</script>
+	</body>
+</html>

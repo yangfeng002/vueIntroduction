@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>vue-router--02</title>
+		<link rel="stylesheet" type="text/css" href="../../less/common.css"/>
+	</head>
+	<body>
+		<div id="app">
+			<!-- 链接 -->
+		    <router-link to="/test1" event="mouseover">测试1</router-link>
+			<!-- v-bind -->
+			<router-link v-bind:to="test2">测试2</router-link>
+			<!-- 暂缓 -->
+			<router-link :to="{ name: 'user', params: { userId: 123 }}">User</router-link>
+			<!-- 路径+请求参数 -->
+			<router-link :to="{ path: 'register', query: { plan: 'private' }}" >Register</router-link>
+			<!-- 测试replace属性，添加了replace属性之后，那么地址栏里面找不到历史记录 -->
+			<router-link :to="{ path: '/abc'}" replace>replace属性测试</router-link>
+			
+			<!-- 测试append属性,添加了append之后，会默认添加基路径 -->
+			<!-- <router-link :to="{ path: 'relative/path'}" append>append属性测试</router-link> -->
+			
+			<router-link to="/test1" exact>extct测试</router-link>
+			<!-- 输出 -->
+			<router-view></router-view>
+		</div>
+		<script src="../../lib/vue/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../lib/vue/vue-router/vue-router.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var router = new VueRouter({
+				routes:[
+					{
+						path:'/test1',
+						component:{template:'<div>test1</div>'}
+					},
+					{
+						path:'/test2',
+						component:{template:'<div>test2</div>'}
+					},
+					{
+						path:'user',
+						name:'user',
+						component:{template:'<div>params</div>'}
+					}
+				],
+				/* linkActiveClass:'active', */
+				//mode:'history'
+				mode:'hash'
+			})
+			
+		    var vue = new Vue({
+				el:'#app',
+				router:router,
+				data:{
+					test2:'/test2'
+				}
+			})
+		</script>
+	</body>
+</html>

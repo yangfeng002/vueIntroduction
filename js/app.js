@@ -14,7 +14,9 @@ new Vue({
 		websiteTag:'<a href="http://www.thenewstep.com">web网站</a>',
 		age:30,
 		x:0,
-		y:0
+		y:0,
+		changeColor:false,
+		changeLength:false
 	},
 	methods:{
 		greet:function(time){
@@ -31,6 +33,14 @@ new Vue({
 			console.log(event);
 			this.x = event.offsetX;
 			this.y = event.offsetY;
+		},
+		change:function(){
+			this.changeColor  = true;
+		}
+	},
+	computed:{
+		add:function(){
+			return ""
 		}
 	}
 })
