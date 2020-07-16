@@ -15,8 +15,8 @@
 		<script type="text/javascript" src="../../lib/vue/vue.js"></script>
 		<script type="text/javascript">
 			  var options = {
-				  /* template如果内容很长，那么用反引号  ``,用普通的引号会报错
-				  
+				  /* es6的语法
+				  template如果内容很长，那么用反引号  ``,用普通的引号会报错 
 				  */
 				  template:`
 				    <div>
@@ -27,9 +27,13 @@
 				 `
 			  }
 			  Vue.component('hello',options);
+			  
+			  //注册的时候绑定id选择器
 			  new Vue({
 				  el:'#app'
 			  });
+			  
+			  //注册的时候绑定类选择器
 			  new Vue({
 				  el:'.app'
 			  })

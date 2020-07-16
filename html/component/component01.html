@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue组件---Vue.extend方法</title>
+	<link rel="stylesheet" href="../../less/common.css"/>
+</head>
+<body>
+	<div id="app">
+	</div>
+   <script src="../../lib/vue/vue.js" type="text/javascript" charset="utf-8"></script>
+   <script type="text/javascript">
+	    /*自定义组件采用 Vue.extend()来实现*/
+		//1.创建构造器
+	  let Profile = Vue.extend({
+			 template:'<p>{{firstName}} {{lastName}} aka {{alias}}</p>',
+			 data(){
+				 return {
+					firstName: 'Walter',
+				    lastName: 'White',
+					alias: 'Heisenberg'
+				 }
+			 }
+		 })
+	     //2.创建profile实例 
+		 new Profile().$mount('#app');	 
+   </script>
+</body>
+</html>
